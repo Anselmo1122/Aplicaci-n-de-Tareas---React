@@ -1,0 +1,140 @@
+.mis-tareas-contenedor {
+    display: flex;
+    align-items: flex-end;
+    max-width: 500px;
+}
+
+.mis-tareas-fondo {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100px;
+    background: url("../imagenes/fondo.png");
+    background-size: contain;
+    background-position-y: 500px;
+    animation: desplazar 18s linear infinite;
+    padding-bottom: 18px;
+}
+
+/* Estilos para Sprites */
+
+.mis-tareas-punk-run {
+    height: 48px;
+    width: 48px;
+    align-self: flex-end;
+    background: url("../imagenes/Punk_run.png");
+    animation: bikerRun .6s steps(6) infinite;
+}
+.mis-tareas-biker-run {
+    height: 48px;
+    width: 35px;
+    align-self: flex-end;
+    background: url("../imagenes/Biker_run.png");
+    animation: bikerRun .6s steps(6) infinite;
+}
+.mis-tareas-walkBird {
+    height: 32px;
+    width: 32px;
+    align-self: flex-start;
+    background: url("../imagenes/WalkBird.png");
+    animation: walkBird .5s steps(6) infinite;
+}
+.mis-tareas-walkDog {
+    height: 48px;
+    width: 48px;
+    background: url("../imagenes/WalkDog.png");
+    animation: walkDog .5s steps(6) infinite;
+}
+.mis-tareas-walk-scan {
+    height: 48px;
+    width: 48px;
+    background: url("../imagenes/Walk_scan.png");
+    animation: walk-scan 1s steps(8) infinite;
+}
+.mis-tareas-walk2 {
+    height: 48px;
+    width: 48px;
+    background: url("../imagenes/Walk2.png");
+    animation: walk2 .5s steps(4) infinite;
+}
+.mis-tareas-walk {
+    height: 96px;
+    width: 96px;
+    background: url("../imagenes/Walk.png");
+    animation: walk .4s steps(4) infinite;
+}
+
+/* Animaciones de Sprites */
+
+@keyframes bikerRun {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -288px;
+    }
+}
+@keyframes walkBird {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -192px;
+    }
+}
+@keyframes walkDog {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -288px;
+    }
+}
+@keyframes walk-scan {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -384px;
+    }
+}
+@keyframes walk2 {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -192px;
+    }
+}
+@keyframes walk {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -384px;
+    }
+}
+
+@keyframes desplazar {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -100vw;
+    }
+}
+
+h1 {
+    flex-grow: 1;
+    align-self: center;
+    color: #efefef;
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0;
+    user-select: none;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px 10px#000000;
+    /* font-family: 'Patrick Hand', cursive; */
+    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Varela Round', sans-serif; */
+  }
