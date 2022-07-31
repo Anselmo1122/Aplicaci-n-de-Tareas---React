@@ -32,6 +32,7 @@ html, body {
 
 .tareas-lista-principal {
   width: 600px;
+  min-width: 300px;
   min-height: 500px;
   background-color: #000000;
   padding: 25px;

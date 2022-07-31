@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    min-width: 300px;
 }
 
 /* Campo de Texto */
@@ -32,4 +33,17 @@
     text-transform: capitalize;
     color: #000000;
     user-select: none;
+}
+
+/* Estilos para resolución con un ancho de "360px" */
+
+@media only screen and (max-width:360px) {
+    .tarea-input {
+        width: 200px;
+    }
+    .tarea-boton {
+        width: 100px;
+        height: 53px;
+        padding: 5px;
+    }
 }

@@ -4,3 +4,11 @@
     justify-content: center;
     margin-top: 15px;
 }
+
+/* Estilos para resolución con un ancho de "360px" */
+
+@media only screen and (max-width:360px) {
+    .tareas-lista-contenedor {
+        width: 300px;
+    }
+}

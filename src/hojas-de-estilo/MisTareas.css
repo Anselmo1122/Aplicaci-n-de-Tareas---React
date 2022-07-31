@@ -134,7 +134,23 @@ h1 {
     user-select: none;
     letter-spacing: 1px;
     text-shadow: 2px 2px 0px 10px#000000;
-    /* font-family: 'Patrick Hand', cursive; */
     font-family: 'Permanent Marker', cursive;
-    /* font-family: 'Varela Round', sans-serif; */
   }
+
+/* Estilos para resolución con un ancho de "360px" */
+
+@media only screen and (max-width: 360px) {
+    .mis-tareas-fondo {
+        width: 300px;
+    }
+    .mis-tareas-walk {
+        display: none;
+    }
+    .mis-tareas-biker-run {
+        display: none;
+    }
+    .mis-tareas-walkDog {
+        display: none;
+    }
+
+}
