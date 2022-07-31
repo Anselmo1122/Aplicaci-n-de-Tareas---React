@@ -6,7 +6,6 @@
 
 html, body {
     color: #ffffff;
-    /* background-color: #79a2c9; */
     font-family: Lato, sans-serif;
     margin-top: 40px;
     background: #2c2c2c;
@@ -32,7 +31,7 @@ html, body {
 
 .tareas-lista-principal {
   width: 600px;
-  min-width: 300px;
+  min-width: 320px;
   min-height: 500px;
   background-color: #000000;
   padding: 25px;

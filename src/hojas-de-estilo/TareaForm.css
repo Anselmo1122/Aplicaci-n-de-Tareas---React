@@ -1,13 +1,14 @@
 /* Estructura principal */
+
 .tarea-formulario {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-width: 300px;
 }
 
 /* Campo de Texto */
+
 .tarea-input {
     width: 350px;
     font-size: 18px;
@@ -20,6 +21,7 @@
 }
 
 /* Boton agregar tarea */
+
 .tarea-boton {
     padding: 14px;
     font-size: 18px;
@@ -35,15 +37,19 @@
     user-select: none;
 }
 
-/* Estilos para resolución con un ancho de "360px" */
+/* Estilos para resolución con un ancho de "580px" */
 
-@media only screen and (max-width:360px) {
+@media screen and (max-width:580px)  {
+    .tarea-formulario {
+        width: 100%;
+    }
     .tarea-input {
-        width: 200px;
+        width: 70%;
     }
     .tarea-boton {
-        width: 100px;
+        width: 30%;
         height: 53px;
         padding: 5px;
     }
 }
+

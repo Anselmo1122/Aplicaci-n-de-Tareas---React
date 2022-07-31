@@ -5,10 +5,10 @@
     margin-top: 15px;
 }
 
-/* Estilos para resolución con un ancho de "360px" */
+/* Estilos para resolución con un ancho de "580px" */
 
-@media only screen and (max-width:360px) {
+@media screen and (max-width:580px) {
     .tareas-lista-contenedor {
-        width: 300px;
+        width: 100%;
     }
 }

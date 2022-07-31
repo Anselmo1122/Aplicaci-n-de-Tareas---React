@@ -137,11 +137,14 @@ h1 {
     font-family: 'Permanent Marker', cursive;
   }
 
-/* Estilos para resolución con un ancho de "360px" */
+/* Estilos para resolución con un ancho de "580px" */
 
-@media only screen and (max-width: 360px) {
+@media screen and (max-width:580px) {
+    .mis-tareas-contenedor{
+        width: 100%;
+    }
     .mis-tareas-fondo {
-        width: 300px;
+        width: 100%;
     }
     .mis-tareas-walk {
         display: none;
