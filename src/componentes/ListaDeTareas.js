@@ -32,7 +32,7 @@ function ListaDeTareas() {
           cursor.result.continue();
         } else {
           setTareas(tareasGuardadas);
-          if (tareasGuardadas.length == 0) {
+          if (tareasGuardadas.length === 0) {
             alert("No hay tareas guardadas");
           };
           console.log(tareasGuardadas);
@@ -106,6 +106,7 @@ function ListaDeTareas() {
     tareas.map(tarea => {
       if (tarea.id === id){
         setTimeout(()=>{deleteTarea(tarea.id)},500)
+        return tarea
       }
     })
 
@@ -151,7 +152,7 @@ function ListaDeTareas() {
         onSubmit={agregarTarea}
         mostrarTareasGuardadas={mostrarTareasGuardadas}
       />
-      <h2 className={tareas.length == 0 ? "no-hay-tareas" : "hay-tareas"}>
+      <h2 className={tareas.length === 0 ? "no-hay-tareas" : "hay-tareas"}>
           No hay tareas
       </h2>
       <div className="tareas-lista">
