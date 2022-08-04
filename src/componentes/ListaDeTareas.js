@@ -104,10 +104,8 @@ function ListaDeTareas() {
     }
 
     tareas.map(tarea => {
-      if (tarea.id === id){
-        setTimeout(()=>{deleteTarea(tarea.id)},500)
-        return tarea
-      }
+      if (tarea.id === id){setTimeout(()=>{deleteTarea(tarea.id)},500)}
+      return tarea
     })
 
     setTareas(tareas.filter(tarea => tarea.id !== id))

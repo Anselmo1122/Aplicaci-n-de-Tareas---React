@@ -1,5 +1,6 @@
 .tarea-contenedor {
   width: 100%;
+  max-width: 500px;
   min-height: 65px;
   background-color: #003158;
   margin: 5px 0;
