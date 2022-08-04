@@ -8,9 +8,7 @@ function MisTareas() {
         <div className="mis-tareas-walk"></div>
         <div className="mis-tareas-walk-scan"></div>
         <div className="mis-tareas-walk2"></div>
-        {/* <div className="mis-tareas-walkDog"></div> */}
         <h1>Mis Tareas</h1>
-        {/* <div className="mis-tareas-walkBird"></div> */}
         <div className="mis-tareas-punk-run"></div>
         <div className="mis-tareas-walkBird"></div>
         <div className="mis-tareas-biker-run"></div>

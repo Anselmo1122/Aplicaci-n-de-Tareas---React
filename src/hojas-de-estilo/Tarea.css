@@ -1,5 +1,5 @@
 .tarea-contenedor {
-  width: 500px;
+  width: 100%;
   min-height: 65px;
   background-color: #003158;
   margin: 5px 0;
@@ -10,6 +10,8 @@
   border-radius: 4px;
   border: 1px solid #000000;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 /* Colores */
@@ -38,14 +40,27 @@
   overflow-wrap: anywhere;
 }
 
-/* Icono */
+/* Iconos */
 
-.tarea-icono {
+.tarea-icono, 
+.tarea-icono-guardada, 
+.tarea-icono-eliminar {
   font-size: 26px;
   margin: 5px;
+  color: #000000;
+  border-radius: 4px;
 }
 .tarea-icono:active {
-  font-size: 25.5px;
+  box-shadow: 0px 0px 10px 0px #00676e;
+}
+.tarea-icono:hover {
+  color: #00ff15;
+}
+.tarea-icono-guardada {
+  color: #00ff15;
+}
+.tarea-icono-eliminar:hover {
+  color: #ff0000;
 }
 
 /* Tarea Completada */

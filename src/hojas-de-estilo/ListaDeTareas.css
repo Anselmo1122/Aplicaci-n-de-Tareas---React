@@ -1,8 +1,36 @@
+
+/* Contenedor de lista de tareas */
 .tareas-lista-contenedor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* lista de tareas */
+.tareas-lista {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
+}
+
+/* No hay tareas / hay tareas */
+
+h2.no-hay-tareas, h2.hay-tareas {
+    position: absolute;
+    align-self: center;
+    text-align: center;
+    top: 150%;
+    /* margin: auto; */
+    color: #69696971;
+    font-family: Lato, sans-serif;
+    user-select: none;
+}
+h2.hay-tareas{
+    display: none;
 }
 
 /* Estilos para resolución con un ancho de "580px" */
