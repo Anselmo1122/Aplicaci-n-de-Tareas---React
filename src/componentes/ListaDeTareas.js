@@ -1,25 +1,27 @@
 import React, {useState} from "react"
 import TareaForm from "./TareaForm"
-import Tarea from './Tarea'
+import Tarea from "./Tarea"
 import MisTareas from "./MisTareas"
-import '../hojas-de-estilo/ListaDeTareas.css'
+import "../hojas-de-estilo/ListaDeTareas.css"
 
 
 
-function ListaDeTareas() {
+export default function ListaDeTareas() {
 
   const [tareas, setTareas] = useState([]);
 
 //------------ Función para mostrar tareas guardadas ------------
   const tareasGuardadas = [];
+
   const mostrarTareasGuardadas =()=> {
 
     const IDBRequest = indexedDB.open("TareaBase", 1);
+
     IDBRequest.addEventListener("upgradeneeded",()=>{
       const db = IDBRequest.result;
       db.createObjectStore("Tareas");
-      console.log("Se ha creado correctamente.");
     })
+    
     const readTareas = () => {
       const db = IDBRequest.result;
       const IDBTransaction = db.transaction("Tareas");
@@ -34,40 +36,59 @@ function ListaDeTareas() {
           setTareas(tareasGuardadas);
           if (tareasGuardadas.length === 0) {
             alert("No hay tareas guardadas");
-          };
-          console.log(tareasGuardadas);
-          console.log(tareas)
+          }
         }
       })
     }
 
     setTimeout(() => {readTareas()}, 500);
-
   }
 
+
 //------------------ Función para agregar tarea ------------------
-  const agregarTarea = tarea => {
+  const agregarTarea = (tarea) => {
     if (tarea.texto.trim()) {
       tarea.texto = tarea.texto.trim();
       const tareasActualizadas = [tarea, ...tareas];      
       setTareas(tareasActualizadas);
-    };
-  };
+    }
+  }
 
 
-//------------------ Función para completar tarea ------------------
-//------------------ Se actualiza la propiedad completada en TareaBase
+//------------------ Función para guardar tarea ------------------
+ const guardarTarea = id => {
+
+  const IDBRequest = indexedDB.open("TareaBase", 1);
+
+  const addTarea = (tarea,key) => {
+    const db = IDBRequest.result;
+    const IDBTransaction = db.transaction("Tareas","readwrite");
+    const objectStore = IDBTransaction.objectStore("Tareas");
+    objectStore.add(tarea,key);
+  }
+
+  const tareasActualizadas = tareas.map(tarea => {
+    if(tarea.id === id){
+      tarea.guardada = true;
+      setTimeout(()=>{addTarea(tarea,tarea.id)},500)}
+      return tarea;
+    }
+  )
+
+    setTareas(tareasActualizadas);
+  }
+
+
+//------------------ Función para completar tarea ----------------
   const completarTarea = id => {
 
     const IDBRequest = indexedDB.open("TareaBase", 1);
+
     const editTarea = (tarea,key) => {
       const db = IDBRequest.result;
       const IDBTransaction = db.transaction("Tareas","readwrite");
       const objectStore = IDBTransaction.objectStore("Tareas");
-      objectStore.put(tarea,key)
-      IDBTransaction.addEventListener("complete",()=>{
-        console.log("Tarea modificada correctamente");
-      })
+      objectStore.put(tarea,key);
     }
 
     const tareasActualizadas = tareas.map(tarea => {
@@ -85,22 +106,19 @@ function ListaDeTareas() {
     )
 
     setTareas(tareasActualizadas);
-  };
+  }
 
 
-//------------------ Función para eliminar tarea ------------------
-//------------------ Se elimina la tarea de TareaBase mediante su "Key"
+//------------------ Función para eliminar tarea -----------------
   const eliminarTarea = id => {
 
     const IDBRequest = indexedDB.open("TareaBase", 1);
+
     const deleteTarea = key => {
       const db = IDBRequest.result;
       const IDBTransaction = db.transaction("Tareas","readwrite");
       const objectStore = IDBTransaction.objectStore("Tareas");
-      objectStore.delete(key)
-      IDBTransaction.addEventListener("complete",()=>{
-        console.log("Tarea eliminada correctamente");
-      })
+      objectStore.delete(key);
     }
 
     tareas.map(tarea => {
@@ -112,39 +130,9 @@ function ListaDeTareas() {
   };
 
 
-//------------------ Función para guardar tarea ------------------
-//------------------ Se almacena la tarea en TareaBase mediante su "Key"
-  const guardarTarea = id => {
-
-    const IDBRequest = indexedDB.open("TareaBase", 1);
-    const addTarea = (tarea,key) => {
-      const db = IDBRequest.result;
-      const IDBTransaction = db.transaction("Tareas","readwrite");
-      const objectStore = IDBTransaction.objectStore("Tareas");
-
-      objectStore.add(tarea,key);
-      IDBTransaction.addEventListener("complete",()=>{
-        console.log("Tarea guardada correctamente");
-      })
-    }
-
-    const tareasActualizadas = tareas.map(tarea => {
-      if(tarea.id === id){
-        tarea.guardada = true;
-        setTimeout(()=>{addTarea(tarea,tarea.id)},500)}
-        return tarea;
-      }
-    )
-
-    setTareas(tareasActualizadas);
-  }
-
-
-
-
+//---------------- Elemento JSX "lista de Tareas" ----------------
   return (
-     // (<></>) Estos son Fragmentos  en "React", sustituyen un div contenedor;
-    <div className="tareas-lista-contenedor">
+    <div className="tareas-contenedor">
       <MisTareas />
       <TareaForm 
         onSubmit={agregarTarea}
@@ -171,6 +159,5 @@ function ListaDeTareas() {
       </div>
     </div>
   );
+  
 }
-
-export default ListaDeTareas;

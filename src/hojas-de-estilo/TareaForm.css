@@ -1,84 +1,58 @@
 /* Estructura principal */
-
 .tarea-formulario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilos comunes */
+.tarea-formulario__boton-guardadas,
+.tarea-formulario__boton-agregar {
+  width: 10vw;
+  max-width: 50px;
+  min-width: 50px;
+  height: 50px;
+  font-size: 35px;
+  cursor: pointer; 
+  background-color: #ffffff;
+}
+
+.tarea-formulario__boton-guardadas,
+.boton-agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Boton para "Mostrar tareas guardadas" */
+.tarea-formulario__boton-guardadas {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.boton-guardadas__icono {
+  color: #00c0fa;
 }
 
 /* Campo de Texto */
-
-.tarea-input {
-    width: 400px;
-    font-size: 18px;
-    background-color: #ffffff;
-    padding: 14px 32px 14px 16px;
-    border: 2px solid #d85b35;
-    border-right: none;
-    border-left: none;
-    outline: none;
-}
-.tarea-input:active {
-    background-color: #ffffff;
+.tarea-formulario__input {
+  width: 100%;
+  margin: 0 10px 0 10px;
+  font-size: 18px;
+  background-color: #ffffff;
+  padding: 14px 32px 14px 16px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
 }
 
-/* Boton agregar tarea */
-
-.tarea-boton {
-    border: 2px solid #d85b35;
-    border-left: none;
-    border-radius: 0px 4px 4px 0px;
-    height: 53px;
-    background: #15b8c4;
-    outline: none;
+/* Boton para "Agregar Tarea" */
+.tarea-formulario__boton-agregar {
+  border: none;
+  margin-right: 10px;
+  border-radius: 2px;
 }
-.tarea-boton:hover {
-    background-color: #0f8088;
-}
-
-.tarea-icono {
-    color: #d85b35;
-    height: 40px;
-}
-
-/* Icono */
-
-.form-contenedor-iconos {
-    border-radius: 4px 0 0 4px;
-    border: 2px solid #d85b35;
-    border-right: none;
-    padding: 2.5px;
-    background-color: #15b8c4;
-    text-align: center;
-}
-.form-contenedor-iconos:hover {
-    background: #0f8088;
-}
-
-.form-icono {
-    font-size: 30px;
-    margin: 5px;
-    color: #000000;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-
-
-/* Estilos para resolución con un ancho de "580px" */
-
-@media screen and (max-width:580px)  {
-    .tarea-formulario {
-        width: 100%;
-    }
-    .tarea-input {
-        width: 70vw;
-    }
-    .tarea-boton {
-        width: 14vw;
-    }
-    .form-contenedor-iconos {
-        width: 14vw;
-    }
+.boton-agregar__icono {
+  color: rgba(89, 0, 255, 0.514);
 }
 

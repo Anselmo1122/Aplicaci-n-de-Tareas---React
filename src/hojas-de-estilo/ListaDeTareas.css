@@ -1,11 +1,27 @@
-
-/* Contenedor de lista de tareas */
-.tareas-lista-contenedor {
-    position: relative;
+/* Contenedor de Componentes en "Lista de Tareas" */
+.tareas-contenedor {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
+    padding-bottom: 20px;
+}
+
+/* No hay tareas / hay tareas */
+h2.no-hay-tareas, h2.hay-tareas {
+    align-self: center;
+    text-align: center;
+    position: absolute;
+    top: 150%;
+
+    color: #69696971;
+    user-select: none;
+}
+h2.hay-tareas{
+    display: none;
 }
 
 /* lista de tareas */
@@ -14,29 +30,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin-top: 15px;
-}
-
-/* No hay tareas / hay tareas */
-
-h2.no-hay-tareas, h2.hay-tareas {
-    position: absolute;
-    align-self: center;
-    text-align: center;
-    top: 150%;
-    /* margin: auto; */
-    color: #69696971;
-    font-family: Lato, sans-serif;
-    user-select: none;
-}
-h2.hay-tareas{
-    display: none;
-}
-
-/* Estilos para resolución con un ancho de "580px" */
-
-@media screen and (max-width:580px) {
-    .tareas-lista-contenedor {
-        width: 100%;
-    }
 }

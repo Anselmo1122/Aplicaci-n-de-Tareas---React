@@ -1,15 +1,16 @@
 import React, {useState} from "react";
-import '../hojas-de-estilo/TareaForm.css'
-import {AiOutlineFieldTime, AiFillPlusSquare} from 'react-icons/ai';
-import {v4 as uuidv4} from 'uuid';
+import "../hojas-de-estilo/TareaForm.css"
+import {AiFillPlusSquare} from "react-icons/ai";
+import {BsClockFill} from "react-icons/bs";
+import {v4 as uuidv4} from "uuid";
 
-function TareaForm(props) {
+export default function TareaForm(props) {
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const manejarCambio = e => {
     setInput(e.target.value)
-  };
+  }
 
   const manejarEnvio = e => {
     e.preventDefault();
@@ -28,40 +29,34 @@ function TareaForm(props) {
       console.log("Se ha creado correctamente.");
     })
 
-    IDBRequest.addEventListener("succes",()=>{
-      console.log("Todo salio bien.");
-    })
-
-    IDBRequest.addEventListener("error",()=>{
-      console.log("ha ocurrido un error");
-    })
-
     // Esta función será un "prop" que va a enviar "tareaNueva";
     props.onSubmit(tareaNueva);
-  };
+  }
 
+//---------------- Elemento JSX "Tarea Formulario" ----------------
   return(
     <form 
-      className='tarea-formulario'
+      className="tarea-formulario"
       onSubmit={manejarEnvio}>
       <div 
-        className='form-contenedor-iconos'
+        className="tarea-formulario__boton-guardadas"
         onClick={()=>props.mostrarTareasGuardadas()}>
-        <AiOutlineFieldTime className='form-icono' title="Tareas guardadas" />
+        <BsClockFill
+          className="boton-guardadas__icono" 
+          title="Tareas guardadas" />
       </div>
       <input 
-        className='tarea-input'
-        placeholder='Escribe una Tarea'
-        name='texto'
-        onChange={manejarCambio}
-      />
-      <button className="tarea-boton">
-        <div className="tarea-icono">
-          <AiFillPlusSquare className="form-icono" title="Agregar Tarea"/>
+        className="tarea-formulario__input"
+        placeholder="Escribe una Tarea"
+        name="texto"
+        onChange={manejarCambio} />
+      <button className="tarea-formulario__boton-agregar">
+        <div className="boton-agregar">
+          <AiFillPlusSquare 
+            className="boton-agregar__icono" 
+            title="Agregar Tarea" />
         </div>
       </button>
     </form>
   );
 }
-
-export default TareaForm;

@@ -1,15 +1,14 @@
-import './App.css';
-import ListaDeTareas from './componentes/ListaDeTareas';
+import "./App.css";
+import ListaDeTareas from "./componentes/ListaDeTareas";
 
-function App() {
+export default function App() {
 
+//---------------- Elemento JSX "App" ----------------
   return (
-    <div className='aplicacion-tareas'>
-      <div className='tareas-lista-principal'>
+    <div className="aplicacion-tareas">
+      <div className="tareas-principal">
         <ListaDeTareas />
       </div>
     </div>
   );
 }
-
-export default App;

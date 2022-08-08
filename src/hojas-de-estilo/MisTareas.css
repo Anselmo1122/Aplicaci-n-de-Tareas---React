@@ -1,159 +1,171 @@
-.mis-tareas-contenedor {
-    display: flex;
-    align-items: flex-end;
-    max-width: 500px;
+/* Estilos contenedor Mis Tareas */
+.mis-tareas {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
 }
 
-.mis-tareas-fondo {
-    display: flex;
-    align-items: flex-end;
-    width: 100vw;
-    height: 100px;
-    background: url("../imagenes/fondo.png");
-    background-size: contain;
-    background-position-y: 500px;
-    animation: desplazar 18s linear infinite;
-    padding-bottom: 18px;
+/* Fondo de contenedor mis tareas */
+.mis-tareas__fondo {
+  width: 100%;
+  height: 110px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+    
+  background: url("../imagenes/Tree.png");
+  background-size: 200px;
+  background-position-y: -25px;
+  background-repeat: repeat-x;
+  animation: desplazar 40s linear infinite;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.mis-tareas__tile {
+  width: 100%;
+  height: 20px;
+  align-self: flex-end;
+  position: absolute;
+
+  background: url("../imagenes/Tile.png");
+  animation: desplazar 20s linear infinite;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-radius: 4px;
+}
+
+/* Estilos comunes para sprites */
+.mis-tareas__punk-run,
+.mis-tareas__boss-run,
+.mis-tareas__biker-run,
+.mis-tareas__child-run,
+.mis-tareas__cat-run {
+  height: 48px;
+  width: 35px;
+  align-self: center;
+  position: absolute;
+  top: 40px;
 }
 
 /* Estilos para Sprites */
+.mis-tareas__punk-run {
+  top: 40px;
+  left: 10%;
+  background: url("../imagenes/Punk.png");
+  animation: run .6s steps(6) infinite;
+}
+.mis-tareas__bird-fly {
+  height: 32px;
+  width: 32px;
+  align-self: flex-start;
+  position: absolute;
+  left: 15%;
+  background: url("../imagenes/Bird.png");
+  animation: fly .5s steps(6) infinite;
+}
+.mis-tareas__boss-run {
+  left: 20%;
+  background: url("../imagenes/Boss.png");
+  animation: run .6s steps(6) infinite;
+}
+.mis-tareas__biker-run {
+  left: 70%;
+  background: url("../imagenes/Biker.png");
+  animation: run .6s steps(6) infinite;
+}
+.mis-tareas__child-run {
+  top: 40px;
+  left: 80%;
+  background: url("../imagenes/Child.png");
+  animation: run .6s steps(6) infinite;
+}
+.mis-tareas__cat-run {
+  top: 40px;
+  left: 85%;
+  background: url("../imagenes/Cat.png");
+  animation: run .6s steps(6) infinite;
+}
 
-.mis-tareas-punk-run {
-    height: 48px;
-    width: 48px;
-    align-self: flex-end;
-    background: url("../imagenes/Punk_run.png");
-    animation: bikerRun .6s steps(6) infinite;
-}
-.mis-tareas-biker-run {
-    height: 48px;
-    width: 35px;
-    align-self: flex-end;
-    background: url("../imagenes/Biker_run.png");
-    animation: bikerRun .6s steps(6) infinite;
-}
-.mis-tareas-walkBird {
-    height: 32px;
-    width: 32px;
-    align-self: flex-start;
-    background: url("../imagenes/WalkBird.png");
-    animation: walkBird .5s steps(6) infinite;
-}
-.mis-tareas-walkDog {
-    height: 48px;
-    width: 48px;
-    background: url("../imagenes/WalkDog.png");
-    animation: walkDog .5s steps(6) infinite;
-}
-.mis-tareas-walk-scan {
-    height: 48px;
-    width: 48px;
-    background: url("../imagenes/Walk_scan.png");
-    animation: walk-scan 1s steps(8) infinite;
-}
-.mis-tareas-walk2 {
-    height: 48px;
-    width: 48px;
-    background: url("../imagenes/Walk2.png");
-    animation: walk2 .5s steps(4) infinite;
-}
-.mis-tareas-walk {
-    height: 96px;
-    width: 96px;
-    background: url("../imagenes/Walk.png");
-    animation: walk .4s steps(4) infinite;
-}
 
 /* Animaciones de Sprites */
-
-@keyframes bikerRun {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -288px;
-    }
-}
-@keyframes walkBird {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -192px;
-    }
-}
-@keyframes walkDog {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -288px;
-    }
-}
-@keyframes walk-scan {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -384px;
-    }
-}
-@keyframes walk2 {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -192px;
-    }
-}
-@keyframes walk {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -384px;
-    }
-}
-
-@keyframes desplazar {
-    from {
-        background-position: 0;
-    }
-    to {
-        background-position: -100vw;
-    }
-}
-
-h1 {
-    flex-grow: 1;
-    align-self: center;
-    color: #efefef;
-    font-size: 25px;
-    text-align: center;
-    margin: 20px 0;
-    user-select: none;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0px 10px#000000;
-    font-family: 'Permanent Marker', cursive;
+@keyframes run {
+  from {
+    background-position: 0;
   }
+  to {
+    background-position: -288px;
+  }
+}
+@keyframes fly {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -192px;
+  }
+}
+@keyframes desplazar {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -100vw;
+  }
+}
+
+/* Estilos para título principal "Mis Tareas" */
+h1 {
+  margin: 20px 0;
+  flex-grow: 1;
+  max-width: 250px;
+  align-self: center;
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+
+  color: rgb(0, 0, 0);
+  user-select: none;
+  letter-spacing: 2px;
+  font-family: 'Bebas Neue', cursive;
+}
+h1::before {
+  content: attr(datatext);
+  position: absolute;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 3s linear;
+  filter: drop-shadow(0 0 30px #fff);
+}
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
 
 /* Estilos para resolución con un ancho de "580px" */
-
 @media screen and (max-width:580px) {
-    .mis-tareas-contenedor{
-        width: 100%;
-    }
-    .mis-tareas-fondo {
-        width: 100%;
-    }
-    .mis-tareas-walk {
-        display: none;
-    }
-    .mis-tareas-biker-run {
-        display: none;
-    }
-    .mis-tareas-walkDog {
-        display: none;
-    }
-
+  .mis-tareas__punk-run {
+    left: 5%;
+  }
+  .mis-tareas__bird-fly {
+    left: 10%;
+  }
+  .mis-tareas__boss-run {
+    display: none;
+  }
+  .mis-tareas__biker-run {
+    left: 80%;
+  }
+  .mis-tareas__child-run {
+    left: 90%;
+  }
+  .mis-tareas__cat-run {
+    display: none;
+  }
 }
