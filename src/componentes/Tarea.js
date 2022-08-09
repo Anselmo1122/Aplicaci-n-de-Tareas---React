@@ -1,8 +1,8 @@
 import React from "react";
 import "../hojas-de-estilo/Tarea.css";
-import {BsFillPinFill, BsXSquareFill} from "react-icons/bs";
+import {BsXSquareFill} from "react-icons/bs";
 
-function Tarea({id, texto, completada, completarTarea, eliminarTarea, guardarTarea, guardada}) {
+function Tarea({id, texto, completada, completarTarea, eliminarTarea}) {
 //---------------- Elemento JSX "Tarea" ----------------
   return(
     <>
@@ -19,13 +19,6 @@ function Tarea({id, texto, completada, completarTarea, eliminarTarea, guardarTar
             className="tarea-icono__eliminar" 
             title="Eliminar" />
         </div>
-      </div>
-      <div 
-          className="tarea-contenedor__guardar"
-          onClick={()=>guardarTarea(id)} >
-          <BsFillPinFill 
-            className={guardada ? "tarea-icono__guardada" : "tarea-icono"}
-            title="Guardar" />
       </div>
     </>
   );

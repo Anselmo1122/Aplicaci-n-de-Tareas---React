@@ -6,8 +6,6 @@
   width: 100%;
 }
 
-/* Estilos comunes */
-.tarea-formulario__boton-guardadas,
 .tarea-formulario__boton-agregar {
   width: 10vw;
   max-width: 50px;
@@ -18,20 +16,10 @@
   background-color: #ffffff;
 }
 
-.tarea-formulario__boton-guardadas,
 .boton-agregar {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Boton para "Mostrar tareas guardadas" */
-.tarea-formulario__boton-guardadas {
-  border-radius: 50%;
-  margin-left: 10px;
-}
-.boton-guardadas__icono {
-  color: #00c0fa;
 }
 
 /* Campo de Texto */
