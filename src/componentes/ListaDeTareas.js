@@ -27,9 +27,8 @@ function ListaDeTareas() {
     const tareasActualizadas = tareas.map(tarea => {
       if (tarea.id === id) {
         tarea.completada = !tarea.completada;
-        return tarea;
-      }}
-    )
+        return tarea}
+      })
 
     setTareas(tareasActualizadas);
   }
